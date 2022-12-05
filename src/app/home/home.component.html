@@ -1,0 +1,44 @@
+<div class="home-search-header">
+  <div class="search-wrapper">
+    <input
+        class="form-control"
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        placeholder="Type to search for product">
+        <fa-icon [icon]="faSearch"></fa-icon>
+  </div>
+
+  <mat-form-field appearance="fill" class="order-by">
+    <mat-label>Order by</mat-label>
+    <mat-select [(value)]="model">
+      <mat-option *ngFor="let order of orders" [value]="order" ngDefaultControl>
+        {{order.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="500"
+    [scrollWindow]="false"
+    (scrolled)="onScroll()"
+>
+  <mat-card *ngFor="let item of items | filter:searchText | orderBy:model.value:model.valueProp">
+    <mat-card-header>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+      <mat-card-subtitle>Price: {{ item.price }}$</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="product-image" src="../../assets/fernando-andrade-potCPE_Cw8A-unsplash.jpg" width="100" height="auto" alt="Photo of a product">
+    <mat-card-content>
+      <p>
+        {{ item.description }}
+      </p>
+      <button mat-button (click)="addToCart(item)">Add to cart</button>
+    </mat-card-content>
+  </mat-card>
+</div>

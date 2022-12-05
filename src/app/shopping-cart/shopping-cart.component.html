@@ -1,0 +1,22 @@
+<div class="header">
+  <h4 class="title">Cart</h4>
+  <button type="button" mat-button (click)="closeCart.emit($event)"><fa-icon [icon]="faXmark"></fa-icon></button>
+</div>
+<div class="body">
+  <div *ngFor="let item of shoppingService.cartItems; let i=index">
+    <p>Name: {{ item.name }}!</p>
+    <p>Description: {{ item.description }}</p>
+    <span>Price: {{ item.price }}$</span>
+    <div>
+      <span>Quantity: </span>
+      <input
+        type="number"
+        min="0"
+        [(ngModel)]="itemQuantities[i]"
+        (ngModelChange)="quantityChanged(itemQuantities[i], i)">
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <button type="button" mat-button color="warn" (click)="closeCart.emit($event)">Close</button>
+</div>

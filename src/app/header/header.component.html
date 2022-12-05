@@ -1,0 +1,4 @@
+<mat-toolbar>
+  <h1 id="title">{{title}}</h1>
+  <button (click)="loginService.logout()" *ngIf="loginService.isLoggedIn" id="logout-btn" mat-button color="accent">Logout</button>
+</mat-toolbar>

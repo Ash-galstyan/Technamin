@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    height: calc(100vh - 100px);
+    margin: 0;
+}
+
+ngb-modal-window {
+  z-index: 1100!important;
+}

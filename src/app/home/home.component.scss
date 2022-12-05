@@ -1,0 +1,86 @@
+.home-search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 0 15px;
+  mat-form-field {
+    margin-left: 10px;
+  }
+}
+
+:host::ng-deep {
+  mat-form-field.order-by {
+    .mat-form-field-wrapper {
+      padding: 0;
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-flex {
+      padding: 0.5em 0.5em 0 0.5em;
+
+      .mat-form-field-infix {
+        font-size: 13px;
+        padding: 0 0 0.5em 0;
+      }
+    }
+  }
+}
+
+.search-results {
+    height: 89%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+        height: 2rem;
+        min-width: 200px;
+        padding-left: 20px;
+    }
+
+    .ng-fa-icon {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+    }
+}
+
+mat-card {
+    margin: 10px !important;
+    min-height: 150px;
+    overflow-y: auto;
+    width: 20%;
+    padding-bottom: 5px;
+    .product-image {
+      width: 100% !important;
+      height: 290px;
+      margin: 0 0 5px 0;
+    }
+
+    mat-card-title {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    mat-card-subtitle {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    mat-card-content {
+      font-size: 12px;
+    }
+}
+

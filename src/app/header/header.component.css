@@ -1,0 +1,17 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#logout-btn {
+  margin-right: 15px;
+}
+
+#title {
+  margin-left: 15px;
+}

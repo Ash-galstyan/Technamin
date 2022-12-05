@@ -1,0 +1,25 @@
+.content-wrapper {
+    margin-top: 71px;
+    height: calc(100vh - 200px);
+}
+
+.example-sidenav-content button {
+  position: absolute;
+  right: 14rem;
+  top: 14.5%;
+  padding: 0;
+}
+
+mat-drawer-container {
+  background-color: transparent;
+}
+
+mat-drawer {
+  max-width: 30%;
+}
+
+:host::ng-deep {
+  mat-drawer-content {
+    margin-left: 0 !important;
+  }
+}
